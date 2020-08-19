@@ -1,23 +1,13 @@
-// var playerName = window.prompt("What is your robot's name?");
+var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
-
-// console.log(playerName, playerHealth, playerAttack);
 
 var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-console.log(enemyNames);
-console.log(enemyNames[0]);
-console.log(enemyNames[1]);
-console.log(enemyNames[2]);
-console.log(enemyNames.length);
-
-// for (var i = 0)    START WORKING ON CODE HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-var fight = function() {
+var fight = function(enemyNames) {
     // Alert users that they are starting the round
     window.alert("Welcome to Robot Gladiators!");
 
@@ -26,7 +16,7 @@ var fight = function() {
             // if player chooses to fight, then fight
             if (promptFight === "fight" || promptFight === "FIGHT") {
 
-                //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
+                //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable.
                 enemyHealth = enemyHealth - playerAttack;
                 // console.log(promptFight);
 
@@ -78,4 +68,6 @@ var fight = function() {
             }
     };
 
-// fight ();
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}

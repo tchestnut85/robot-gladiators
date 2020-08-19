@@ -14,6 +14,11 @@ var fight = function(enemyName) {
       // ask user if they'd liked to fight or run
       var promptFight = window.prompt('Would you like FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
   
+      if (promptFight === "fight" || promtFight === "FIGHT") {
+          fight();
+      } else { windows.alert("You must enter a correct response!")
+    }
+      
       // if user picks "skip" confirm and then stop the loop
       if (promptFight === "skip" || promptFight === "SKIP") {
         // confirm user wants to skip
@@ -65,7 +70,20 @@ var fight = function(enemyName) {
     }
   };
 
+
 for(var i = 0; i < enemyNames.length; i++) {
+    if (playerHealth > 0) {
+        window.alert("Welcome to Robot Gladtiators! Round " + (i + 1) );
+        var pickedEnemyName = enemyNames[i];
+        enemyHealth = 50;
+        // use debugger to pause and check what's going on
+        //debugger
+        fight(pickedEnemyName);
+        else {
+            window.alert("You have lost your robot in battle! Game Over!");
+            break;
+        }
+    }
     var pickedEnemyName = enemyNames[i];
     enemyHealth = 50;
     fight(pickedEnemyName);

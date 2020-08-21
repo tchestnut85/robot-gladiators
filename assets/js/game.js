@@ -127,15 +127,33 @@ var shop = function() {
   switch (shopOptionPrompt) {
     case "refill":
     case "REFILL":
-      window.alert("Refilling player's health by 20 for 7 dollars.");
-      playerHealth += 20;
-      playerMoney -= 7;
+      if (playerMoney >= 7) {
+        window.alert("Refilling player's health by 20 for 7 dollars.");
+        playerHealth += 20;
+        playerMoney -= 7;
+      }
+      else {
+        window.alert("You don't have3 enough money!");
+      }
       break;
     case "upgrade":
     case "UPGRADE":
-      window.alert("Upgrading player's attack by 6 for 7 dollars.");
-      playerAttack += 6;
-      playerMoney -= 7;
+      if (playerMoney>= 7) {
+        window.alert("Upgrading player's attack by 6 for 7 dollars.");
+        playerAttack += 6;
+        playerMoney -= 7;
+      }
+      else {
+        window.alert("You don't have enough moneY!");
+      }
+      break;
+    case "LEAVE":
+    case "leave":
+      window.alert("Leaving the store.");
+      break;
+    default:
+      window.alert("You did not pick a valid option. Try again.");
+      shop();
       break;
   }
 };
@@ -143,6 +161,8 @@ var shop = function() {
 // start first game when page loads
 startGame();
 
+
+// review code below
 
     if (promptFight === "fight" || promptFight === "FIGHT") {
 

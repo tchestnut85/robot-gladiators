@@ -142,21 +142,19 @@ var fight = function (enemy) {
 var shop = function () {
   //ask player what to do
   var shopOptionPrompt = window.prompt(
-    "Would you like to REFILL your health, UPGRADE your attack. or LEAVE the store? Please enter one: 'REFILL', 'UPGRADE', or 'LEAVE' to make a choice."
+    'Would you like to REFILL your health, UPGRADE your attack. or LEAVE the store? Please enter: 1 to REFILL health, 2 to UPGRADE attack, or 3 to LEAVE the store.'
   );
 
   //use switch case to carry out action
+  shopOptionPrompt = parseInt(shopOptionPrompt);
   switch (shopOptionPrompt) {
-    case "refill":
-    case "REFILL":
+    case 1:
       playerInfo.refillHealth();
       break;
-    case "upgrade":
-    case "UPGRADE":
+    case 2:
       playerInfo.upgradeAttack();
       break;
-    case "LEAVE":
-    case "leave":
+    case 3:
       window.alert("Leaving the store.");
       break;
     default:
@@ -191,7 +189,7 @@ var playerInfo = {
   },
   refillHealth: function() {
     if (this.money >= 7) {
-      window.alert("Refilling player's health by 20 for 7 dollars.");
+      window.alert("Refilling " + playerInfo.name + "'s health by 20 for 7 dollars.");
       this.health += 20;
       this.money -= 7;
     }
@@ -201,7 +199,7 @@ var playerInfo = {
   },
   upgradeAttack: function() {
     if (this.money >= 7) {
-      window.alert("Upgrading player's attack by 6 for 7 dollars.");
+      window.alert("Upgrading " + playerInfo.name + "'s attack by 6 for 7 dollars.");
     }
     else {
       window.alert("You don't have enough money!");
